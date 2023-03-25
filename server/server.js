@@ -6,15 +6,15 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
-const connection = mysql.createConnection({
+const db = mysql.createdb({
     user: 'root',
     password: '54628288',
     host: 'localhost',
     database: 'mysql'
 })
-connection.connect((err) => {
-    if (err) console.log('Connection Failed!')
-    return console.log('Connection Success!')
+db.connect((err) => {
+    if (err) console.log('db Failed!')
+    return console.log('db Success!')
 })
 
 app.get("/", (req, res) => {
@@ -23,7 +23,7 @@ app.get("/", (req, res) => {
 
 app.get("/books", (req, res) => {
     const q = "SELECT * FROM booksdb.books"
-    connection.query(q, (err, data) => {
+    db.query(q, (err, data) => {
         if (err) return res.json(err)
         return res.json(data)
     })
@@ -37,7 +37,17 @@ app.post("/books", (req, res) => {
         req.body.price
     ]
 
-    connection.query(q, [ values ], (err, data) => {
+    db.query(q, [ values ], (err, data) => {
+        if (err) return res.json(err)
+        return res.json(data)
+    })
+})
+
+app.delete("/books/:id", (req, res) => {
+    const bookId = req.params.id
+    const q = "DELETE FROM booksdb.books WHERE id = ?"
+
+    db.query(q, [ bookId ], (err, data) => {
         if (err) return res.json(err)
         return res.json(data)
     })
