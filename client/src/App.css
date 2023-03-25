@@ -4,3 +4,27 @@
   padding: 2rem;
   text-align: center;
 }
+
+body {
+  background-color: rgb(10, 10, 10);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 15px;
+}
+
+.flex__container {
+  display: flex;
+  position: absolute;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: left;
+  column-gap: 20px;
+  row-gap: 30px;
+}
+
+.book__list {
+  height: 300px;
+  width: 300px;
+  border-radius: 7px;
+  background-color: darkgray;
+  color: black;
+}
