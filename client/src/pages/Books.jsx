@@ -8,7 +8,6 @@ const Books = () => {
   useEffect(() => {
     axios.get(`http://localhost:3001/books`).then(res => {
       setBooksList(res.data)
-      console.log(res.data)
     })
   }, [ booksList ])
   
