@@ -9,6 +9,7 @@ const AllRoutes = () => {
             <Route element={ <Page.Home /> } path='/' />
             <Route element={ <Page.Books /> } path='/books' />
             <Route element={ <Page.Add /> } path='/add' />
+            <Route element={ <Page.Update /> } path='/update/:id' />
             <Route element={ <Page.NotFound /> } path='*' />
         </Routes>
     </Router>
