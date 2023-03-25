@@ -19,6 +19,7 @@ const Books = () => {
             <h3> {book.title} </h3>
             <p> {book.descr} </p>
             <span> {book.price}$ </span>
+            <button>Delete Book</button>
           </section>
         ))
       }
