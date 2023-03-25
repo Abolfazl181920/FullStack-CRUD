@@ -8,6 +8,7 @@ const Books = () => {
   useEffect(() => {
     axios.get(`http://localhost:3001/books`).then(res => {
       setBooksList(res.data)
+      console.log(res.data)
     })
   }, [ booksList ])
   
@@ -16,8 +17,8 @@ const Books = () => {
       {
         booksList.map(book => (
           <section className='book__list' key={book.id}>
-            <h4> {book.title} </h4>
-            <p className='book__desc'> {book.descr} </p>
+            <h3> {book.title} </h3>
+            <p> {book.descr} </p>
             <span> {book.price}$ </span>
           </section>
         ))
