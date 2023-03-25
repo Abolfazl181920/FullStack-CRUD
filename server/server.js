@@ -21,4 +21,12 @@ app.get("/", (req, res) => {
     res.json("Home Data!")
 })
 
+app.get("/books", (req, res) => {
+    const q = "SELECT * FROM booksdb.books"
+    connection.query(q, (err, data) => {
+        if (err) return res.json(err)
+        return res.json(data)
+    })
+})
+
 app.listen(3001, () => console.log('server is running on port 3001!'))
