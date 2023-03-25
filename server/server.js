@@ -6,15 +6,15 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
-const db = mysql.createdb({
+const db = mysql.createConnection({
     user: 'root',
     password: '54628288',
     host: 'localhost',
     database: 'mysql'
 })
 db.connect((err) => {
-    if (err) console.log('db Failed!')
-    return console.log('db Success!')
+    if (err) console.log('Connection Failed!')
+    return console.log('Connection Success!')
 })
 
 app.get("/", (req, res) => {

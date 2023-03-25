@@ -10,6 +10,14 @@ const Books = () => {
       setBooksList(res.data)
     })
   }, [ booksList ])
+
+  const deleteBook = (id) => {
+    try {
+      axios.delete(`http://localhost:3001/books/${id}`)
+    } catch {
+      console.error(`Failed to delete a book with this id: ${id}`)
+    }
+  }
   
   return (
     <div className='flex__container'>
@@ -19,7 +27,7 @@ const Books = () => {
             <h3> {book.title} </h3>
             <p> {book.descr} </p>
             <span> {book.price}$ </span>
-            <button>Delete Book</button>
+            <button onClick={() => deleteBook(book.id)}>Delete Book</button>
           </section>
         ))
       }
