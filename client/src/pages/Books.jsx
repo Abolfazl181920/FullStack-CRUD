@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 
 const Books = () => {
@@ -27,7 +28,8 @@ const Books = () => {
             <h3> {book.title} </h3>
             <p> {book.descr} </p>
             <span> {book.price}$ </span>
-            <button onClick={() => deleteBook(book.id)}>Delete Book</button>
+            <button onClick={() => deleteBook(book.id)}>Delete</button>
+            <button> <Link to={`/update/${book.id}`}>Update</Link> </button>
           </section>
         ))
       }
