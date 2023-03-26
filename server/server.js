@@ -70,7 +70,17 @@ app.put("/book/:id", (req, res) => {
 })
 
 app.post("/auth", (req, res) => {
-    
+    const q = "INSERT INTO booksdb.users (`username`, `password`, `email`) VALUES (?)"
+    const userData = [
+        req.body.username,
+        req.body.password,
+        req.body.email
+    ]
+
+    db.query(q, [ userData ], (err, data) => {
+        if (err) return res.json(err)
+        return res.json(data)
+    })
 })
 
 app.listen(3001, () => console.log('server is running on port 3001!'))
