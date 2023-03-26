@@ -69,7 +69,7 @@ app.put("/book/:id", (req, res) => {
     })
 })
 
-app.post("/auth", (req, res) => {
+app.post("/signup", (req, res) => {
     const q = "INSERT INTO booksdb.users (`username`, `password`, `email`) VALUES (?)"
     const userData = [
         req.body.username,
