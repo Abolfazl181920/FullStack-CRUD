@@ -95,8 +95,10 @@ app.post("/signin", (req, res) => {
         if (err) throw err
         if (data.length === 1) {
             alert("User Exists")
+            res.json(data)
         } else {
             alert("User Not Exists")
+            res.json(err)
         }
     })
 })
