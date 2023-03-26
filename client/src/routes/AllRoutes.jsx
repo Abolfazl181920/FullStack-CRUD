@@ -8,8 +8,8 @@ const AllRoutes = () => {
         <Routes>
             <Route element={ <Page.Home /> } path='/' />
             <Route element={ <Page.Books /> } path='/books' />
-            <Route element={ <Page.Add /> } path='/add' />
             <Route element={ <Page.Update /> } path='/update/:id' />
+            <Route element={ <Page.Auth /> } path='/auth' />
             <Route element={ <Page.NotFound /> } path='*' />
         </Routes>
     </Router>
