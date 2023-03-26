@@ -3,6 +3,7 @@ import Books from '../pages/Books'
 import Add from '../pages/Add'
 import Update from '../pages/Update'
 import Auth from '../pages/Auth'
+import SignIn from '../pages/SignIn'
 import NotFound from '../pages/NotFound'
 
 export default {
@@ -11,5 +12,6 @@ export default {
     Add,
     Update,
     Auth,
+    SignIn,
     NotFound
 }

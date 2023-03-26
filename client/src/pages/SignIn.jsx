@@ -3,9 +3,9 @@ import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 import axios from 'axios'
 
-const Auth = () => {
+const SignIn = () => {
 
-  const [ addUser, setAddUser ] = useState({
+  const [ signInUser, setSignInUser ] = useState({
     username: "",
     password: "",
     email: ""
@@ -24,9 +24,7 @@ const Auth = () => {
   })
   
   const onSubmit = (data) => {
-    axios.post(`http://localhost:3001/signup`, data).then((response) => {
-      setAddUser(response.data)
-    })
+    axios.post(`http://localhost:3001/signin`, data)
   }
 
   return (
@@ -56,11 +54,11 @@ const Auth = () => {
                         placeholder="(Ex. John123...)"
                     />
 
-                    <button type="submit"> Add User</button>
+                    <button type="submit"> SignIn User</button>
                 </Form>
             </Formik>
         </div>
   )
 }
 
-export default Auth
+export default SignIn
