@@ -83,4 +83,22 @@ app.post("/signup", (req, res) => {
     })
 })
 
+app.post("/signin", (req, res) => {
+    const q = "SELECT * FROM booksdb.users WHERE username = ? AND password = ? AND email = ?"
+    const userData = [
+        req.body.username,
+        req.body.password,
+        req.body.email
+    ]
+
+    db.query(q, [ userData ], (err, data) => {
+        if (err) throw err
+        if (data.length === 1) {
+            alert("User Exists")
+        } else {
+            alert("User Not Exists")
+        }
+    })
+})
+
 app.listen(3001, () => console.log('server is running on port 3001!'))
