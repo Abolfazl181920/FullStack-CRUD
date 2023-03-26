@@ -1,1 +1,1 @@
-SELECT * FROM booksdb.books
+SELECT * FROM booksdb.users

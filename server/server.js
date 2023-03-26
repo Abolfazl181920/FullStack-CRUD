@@ -53,4 +53,24 @@ app.delete("/books/:id", (req, res) => {
     })
 })
 
+app.put("/book/:id", (req, res) => {
+    const bookId = req.params.id
+    const q = "UPDATE booksdb.books SET `title` = ?, `descr` = ?, `price` = ? WHERE id = ?"
+
+    const values = [
+        req.body.title,
+        req.body.descr,
+        req.body.price
+    ]
+
+    db.query(q, [ ...values, bookId ], (err, data) => {
+        if (err) return res.json(err)
+        return res.json(data)
+    })
+})
+
+app.post("/auth", (req, res) => {
+    
+})
+
 app.listen(3001, () => console.log('server is running on port 3001!'))
