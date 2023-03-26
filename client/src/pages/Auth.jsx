@@ -24,7 +24,7 @@ const Auth = () => {
   })
   
   const onSubmit = (data) => {
-    axios.post(`http://localhost:3001/auth`, data).then((response) => {
+    axios.post(`http://localhost:3001/signup`, data).then((response) => {
         setAddUser(response.data)
         console.log('User Added!!!')
     })
