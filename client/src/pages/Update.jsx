@@ -1,12 +1,12 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik'
-import { useParams, Location } from 'react-router-dom'
+// import { useParams, Location } from 'react-router-dom'
 import * as Yup from 'yup'
 import axios from 'axios'
 
 const Update = () => {
 
     // const bookId = useParams()
-    const bookId = location.pathname.split("/")[2]
+    // const bookId = location.pathname.split("/")[2]
     
     const initialValues = {
         title: "",
